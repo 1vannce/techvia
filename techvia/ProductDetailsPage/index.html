@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - TechVia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Background Sky Canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="../HomePage/webby.html" class="logo">TechVia</a>
+      <div class="nav-links">
+        <a href="../HomePage/webby.html">Home</a>
+        <a href="../AboutUs/index.html">About us</a>
+        <a href="../ContactUs/contact.html">Contact</a>
+        <a href="../ProductsPage/index.html">Product</a>
+        <a href="../CartPage/Cart.html" class="cart-link"
+          >🛒 Cart (<span id="cartCount">0</span>)</a
+        >
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <div class="breadcrumb">
+      <a href="../HomePage/webby.html">Home</a>
+      <span class="separator">/</span>
+      <a href="../ProductsPage/index.html">Products</a>
+      <span class="separator">/</span>
+      <span class="current" id="breadcrumbProduct">Product Details</span>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="product-details-wrapper">
+        <!-- Product Images -->
+        <div class="product-images">
+          <div class="main-image-container">
+            <img
+              id="mainImage"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23121E2C' width='400' height='300'/%3E%3C/svg%3E"
+              alt="Product Image"
+            />
+          </div>
+          <div class="thumbnail-container" id="thumbnailContainer"></div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1 id="productName"></h1>
+          <div class="price-section">
+            <span class="price" id="productPrice"></span>
+          </div>
+          <div class="description-section">
+            <h2>Description</h2>
+            <p id="productDescription"></p>
+          </div>
+          <div class="specs-section">
+            <h2>Specifications</h2>
+            <ul id="productSpecs"></ul>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-add-cart" id="addToCartBtn">Add to Cart</button>
+            <a href="../ProductsPage/index.html" class="btn-back-products"
+              >← Back to Products</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>&copy; 2025 TechVia. All rights reserved.</footer>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

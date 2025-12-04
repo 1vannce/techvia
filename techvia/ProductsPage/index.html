@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TechVia Products</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <!-- Background Sky Canvas -->
+  <canvas id="bg"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../HomePage/webby.html" class="logo">TechVia</a>
+    <div class="nav-links">
+      <a href="../HomePage/webby.html">Home</a>
+      <a href="../AboutUs/index.html">About us</a>
+      <a href="../ContactUs/contact.html">Contact</a>
+      <a href="index.html">Product</a>
+      <a href="../CartPage/Cart.html" class="cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>Welcome to TechVia</h1>
+    <p>Your one-stop shop for premium gaming gear.</p>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- Controls Row -->
+    <div class="controls">
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+
+      <!-- Category Buttons -->
+      <div class="categories" id="categories">
+        <button class="active" data-cat="all">All</button>
+        <button data-cat="display">Display</button>
+        <button data-cat="keyboard">Keyboard</button>
+        <button data-cat="mouse">Mouse</button>
+        <button data-cat="chairs">Chairs</button>
+        <button data-cat="audio">Audio</button>
+        <button data-cat="others">Others</button>
+      </div>
+
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid"></div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>&copy; 2025 TechVia. All rights reserved.</footer>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

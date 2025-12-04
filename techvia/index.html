@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechVia - Your One-Stop Shop for Premium Gaming Gear</title>
+    <meta name="description" content="TechVia - Experience premium gaming gear. Shop monitors, keyboards, mice, chairs, and audio equipment." />
+    
+    <!-- Redirect to HomePage after a brief moment for better UX -->
+    <script>
+      // Immediate redirect to homepage
+      window.location.href = 'HomePage/webby.html';
+    </script>
+    
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=HomePage/webby.html" />
+    </noscript>
+    
+    <style>
+      /* Loading screen styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background: #1E2832;
+        color: #eee;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      
+      .loading-container {
+        text-align: center;
+        animation: fadeIn 0.5s ease-in;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .logo {
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 4px;
+        color: white;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
+        animation: glowPulse 2s infinite alternate ease-in-out;
+      }
+      
+      @keyframes glowPulse {
+        0% {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 25px rgba(125, 218, 255, 0.8);
+        }
+      }
+      
+      .loading-text {
+        color: #ccc;
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+      
+      .spinner {
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid #7ddaff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .redirect-link {
+        color: #7ddaff;
+        text-decoration: none;
+        margin-top: 30px;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #7ddaff;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+      
+      .redirect-link:hover {
+        background: rgba(125, 218, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="logo">TechVia</div>
+      <div class="spinner"></div>
+      <p class="loading-text">Loading...</p>
+      <a href="HomePage/webby.html" class="redirect-link">Click here if you are not redirected automatically</a>
+    </div>
+  </body>
+</html>
+
+
+
