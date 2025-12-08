@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TechVia Products</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Background Sky Canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="logo">TechVia</div>
+      <div class="nav-links">
+        <a href="../HomePage/webby.html">Home</a>
+        <a href="../AboutUsPage/index.html">About Us</a>
+        <a href="../ContactUsPage/contact.html">Contact</a>
+        <a href="index.html" class="active">Product</a>
+        <a href="../CartPage/Cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <h1>Welcome to TechVia</h1>
+      <p>Your one-stop shop for premium gaming gear.</p>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- Controls Row -->
+      <div class="controls">
+        <!-- Search Bar -->
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+          />
+        </div>
+
+        <!-- Category Buttons -->
+        <div class="categories" id="categories">
+          <button class="active" data-cat="all">All</button>
+          <button data-cat="display">Display</button>
+          <button data-cat="keyboard">Keyboard</button>
+          <button data-cat="mouse">Mouse</button>
+          <button data-cat="chairs">Chairs</button>
+          <button data-cat="audio">Audio</button>
+          <button data-cat="others">Others</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">×</button>
+
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+
+        <ul class="specs-list" id="modalSpecs"></ul>
+
+        <div class="modal-images" id="modalImages"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>&copy; 2025 TechVia. All rights reserved.</footer>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

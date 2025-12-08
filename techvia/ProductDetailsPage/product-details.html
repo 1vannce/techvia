@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - TechVia</title>
+    <link rel="stylesheet" href="product-details.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Background Canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">TechVia</div>
+      <div class="nav-links">
+        <a href="../HomePage/webby.html">Home</a>
+        <a href="../AboutUsPage/index.html">About Us</a>
+        <a href="../ContactUsPage/contact.html">Contact</a>
+        <a href="../ProductsPage/index.html">Product</a>
+        <a href="../CartPage/Cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../ProductsPage/index.html">Products</a>
+        <span>/</span>
+        <span id="breadcrumbName">Product Name</span>
+      </div>
+
+      <div class="product-details-container">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+          <div class="main-image">
+            <canvas id="mainImage"></canvas>
+          </div>
+          <div class="thumbnail-list" id="thumbnailList">
+            <!-- Thumbnails will be dynamically inserted -->
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1 id="productName">Product Name</h1>
+          <p class="price" id="productPrice">$0.00</p>
+          <p class="description" id="productDescription">
+            Product description goes here.
+          </p>
+
+          <div class="specs-section">
+            <h3>Specifications</h3>
+            <ul class="specs-list" id="specsList">
+              <!-- Specs will be dynamically inserted -->
+            </ul>
+          </div>
+
+          <div class="quantity-section">
+            <label for="quantity">Quantity:</label>
+            <div class="quantity-controls">
+              <button id="decreaseQty">-</button>
+              <input type="number" id="quantity" value="1" min="1" />
+              <button id="increaseQty">+</button>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-add-to-cart" id="addToCartBtn">
+              Add to Cart
+            </button>
+            <button class="btn-back" id="backBtn">Back to Products</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 TechVia. All rights reserved.</footer>
+
+    <script src="product-details.js"></script>
+  </body>
+</html>

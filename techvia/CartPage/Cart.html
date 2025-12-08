@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CartDesign.css" />
+  </head>
+
+  <body>
+    <video autoplay muted loop id="bgVideo">
+      <source src="background.mp4" type="video/mp4" />
+    </video>
+
+    <div id="blueOverlay"></div>
+
+    <header class="page-header">
+      <div class="header-top-row">
+        <div class="brand-container">
+          <div id="logo"></div>
+          <h1 class="brand-title">TechVia</h1>
+        </div>
+
+        <nav class="main-nav">
+          <a href="../HomePage/webby.html">Home</a>
+          <a href="../AboutUsPage/index.html">About us</a>
+          <a href="../ContactUsPage/contact.html">Contact</a>
+          <a href="../ProductsPage/index.html">Product</a>
+          <a href="Cart.html" class="active-link">Cart</a>
+        </nav>
+      </div>
+
+      <div class="header-bottom-row">
+        <h2 class="page-title">Shopping Cart</h2>
+        <div class="quote-container-header">
+          <p id="store-quote" class="quote-text">
+            "TechVia: The Only Way to Seamless Technology."
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="cart-container" id="cartContainer">
+      <div class="cart-header">
+        <div class="col-edit" id="editHeader">EDIT</div>
+        <div class="col-product">Product</div>
+        <div class="col-price">Price</div>
+        <div class="col-qty">Quantity</div>
+        <div class="col-subtotal">Subtotal</div>
+      </div>
+
+      <div class="cart-scroll" id="cartItems"></div>
+    </div>
+
+    <div class="checkout-container">
+      <div class="checkout-scroll">
+        <div id="checkoutView" class="checkout-view">
+          <div class="checkout-header-container">
+            <h2 class="checkout-header">CHECKOUT</h2>
+          </div>
+
+          <div class="user-info">
+            <div class="info-content">
+              <div class="name-phone">
+                <span id="userName">Firstname Lastname</span>
+                <span id="userPhone">(+63)0000000000</span>
+              </div>
+              <div class="address-line" id="userAddress">
+                Province, City, Street, Zip Code
+              </div>
+            </div>
+            <a href="#" class="edit-link" id="editAddressLink">&gt;</a>
+          </div>
+
+          <div class="summary-section">
+            <div class="summary-row">
+              <div class="summary-label">
+                Product Subtotal
+                <span class="dropdown-arrow" id="productDropdown">▼</span>
+              </div>
+              <div class="summary-value" id="productSubtotal">$0.00</div>
+            </div>
+            <div class="product-details" id="productDetails"></div>
+          </div>
+
+          <div class="summary-section">
+            <div class="summary-row">
+              <div class="summary-label">Shipping Subtotal</div>
+              <div class="summary-value" id="shippingSubtotal">$69.69</div>
+            </div>
+          </div>
+
+          <div class="summary-section">
+            <div class="summary-row">
+              <div class="summary-label">Voucher</div>
+              <div class="summary-value" id="voucherDiscount">-$0.00</div>
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 10px">
+              <input
+                type="text"
+                id="voucherInput"
+                placeholder="Enter code"
+                style="
+                  padding: 8px;
+                  flex: 1;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  font-family: 'Antonio', sans-serif;
+                "
+              />
+              <button
+                id="applyVoucher"
+                style="
+                  padding: 8px 15px;
+                  background: #000;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-family: 'Antonio', sans-serif;
+                  font-weight: 600;
+                "
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+
+          <div class="summary-section payment-method">
+            <div class="summary-label" style="margin-bottom: 10px">
+              Payment Method
+            </div>
+
+            <div class="payment-option">
+              <input type="radio" name="payment" id="cod" value="cod" checked />
+              <label for="cod">Cash on Delivery</label>
+            </div>
+
+            <div class="payment-icons">
+              <img
+                src="https://www.bing.com/th/id/OIP.p1BiFCik1V_AxuZ6CAKaBgHaGL?w=213&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
+                alt="GCash"
+                class="payment-icon"
+              />
+              <img
+                src="https://th.bing.com/th/id/OIP.ZkGon8018F6853mXZECnYwHaCv?w=273&h=129&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                alt="PayMaya"
+                class="payment-icon"
+              />
+              <img
+                src="https://th.bing.com/th/id/OIP.dYGBNtQ71rlcAs82fTY9EAHaHa?w=201&h=202&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                alt="Bank Card"
+                class="payment-icon bank-icon"
+              />
+              <a href="#" class="view-all-link" id="viewAllPayments"
+                >View all options &gt;</a
+              >
+            </div>
+
+            <div class="payment-options-expanded" id="expandedPayments">
+              <div class="payment-option">
+                <input type="radio" name="payment" id="gcash" value="gcash" />
+                <label for="gcash">GCash</label>
+              </div>
+              <div class="payment-option">
+                <input
+                  type="radio"
+                  name="payment"
+                  id="paymaya"
+                  value="paymaya"
+                />
+                <label for="paymaya">PayMaya</label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" name="payment" id="bank" value="bank" />
+                <label for="bank">Bank (Credit/Debit)</label>
+              </div>
+            </div>
+
+            <div class="payment-details" id="gcashDetails">
+              <div class="form-group">
+                <label for="gcashNumber">GCash Mobile Number</label>
+                <input
+                  type="tel"
+                  id="gcashNumber"
+                  placeholder="09xxxxxxxxx"
+                  maxlength="11"
+                />
+              </div>
+              <div class="form-group">
+                <label for="gcashName">Account Name</label>
+                <input type="text" id="gcashName" placeholder="Full Name" />
+              </div>
+            </div>
+
+            <div class="payment-details" id="paymayaDetails">
+              <div class="form-group">
+                <label for="paymayaNumber">PayMaya Mobile Number</label>
+                <input
+                  type="tel"
+                  id="paymayaNumber"
+                  placeholder="09xxxxxxxxx"
+                  maxlength="11"
+                />
+              </div>
+              <div class="form-group">
+                <label for="paymayaName">Account Name</label>
+                <input type="text" id="paymayaName" placeholder="Full Name" />
+              </div>
+            </div>
+
+            <div class="payment-details" id="bankDetails">
+              <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cardName">Cardholder Name</label>
+                <input type="text" id="cardName" placeholder="Name on Card" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expiryDate">Expiry Date</label>
+                  <input
+                    type="text"
+                    id="expiryDate"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" placeholder="123" maxlength="3" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-section">
+            <div class="summary-row total-row">
+              <div class="summary-label">TOTAL</div>
+              <div class="summary-value" id="totalAmount">$69.69</div>
+            </div>
+          </div>
+
+          <button class="place-order-btn" id="placeOrderBtn" disabled>
+            PLACE ORDER
+          </button>
+        </div>
+
+        <div id="shippingView" class="shipping-form">
+          <div class="checkout-header-container">
+            <h2 class="checkout-header">SHIPPING ADDRESS</h2>
+            <a href="#" class="back-link" id="backToCheckout">Back &gt;</a>
+          </div>
+
+          <form id="shippingForm">
+            <div class="form-group">
+              <label for="firstname">Firstname</label>
+              <input type="text" id="firstname" name="firstname" required />
+            </div>
+
+            <div class="form-group">
+              <label for="lastname">Lastname</label>
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="9xxxxxxxxx"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="province">Province</label>
+              <select id="province" name="province" required>
+                <option value="">Select Province</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="city">City</label>
+              <select id="city" name="city" required disabled>
+                <option value="">Select City</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input
+                type="text"
+                id="street"
+                name="street"
+                placeholder="House No., Street Name, Barangay"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-address-btn">
+              Submit Changes
+            </button>
+          </form>
+        </div>
+
+        <div id="confirmationView" class="confirmation-view">
+          <div class="checkout-header-container">
+            <h2 class="checkout-header">CHECKOUT</h2>
+          </div>
+
+          <div class="checkmark"></div>
+          <h3 class="confirmation-title">ORDER CONFIRMED</h3>
+          <p class="confirmation-text">
+            Congratulations! Your order is confirmed and already on its way to
+            the warehouse team. Keep an eye on your inbox for shipping updates.
+          </p>
+          <p class="confirmation-text" style="font-size: 14px; color: #999">
+            If you have any questions, please contact our support team
+          </p>
+
+          <button class="place-order-btn" id="countdownBtn">
+            Back in 5s...
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModal">
+      <div class="modal-content">
+        <h3 class="modal-header" id="modalHeader">Confirm Deletion</h3>
+        <p id="modalMessage">
+          Are you sure you want to delete the selected item(s)?
+        </p>
+        <div class="modal-actions">
+          <button id="cancelDelete" class="btn btn-cancel">Cancel</button>
+          <button id="confirmDelete" class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-content">
+        <div class="contact-details">
+          <h3 class="footer-title">Contact Us</h3>
+          <p>+63 939-155-0024</p>
+          <p>
+            <a href="https://www.facebook.com/TechVia.we" target="_blank"
+              >Facebook TechVia</a
+            >
+          </p>
+        </div>
+
+        <div class="brand-info">
+          <p>&copy; 2025 TechVia. Technology is the way.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="CartDynamic.js"></script>
+  </body>
+</html>
